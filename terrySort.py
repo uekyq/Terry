@@ -3,19 +3,21 @@ from PIL import ImageTk, Image
 
 root = Tk()
 
-# ee
-# Creating a Label Widget
-myLabel = Label(root, text="Hello, World!")
-myLabel.pack()
-canvas = Canvas(root, width = 300, height = 300)
-canvas.pack()
-img = ImageTk.PhotoImage(file="C:/Users/Uekyq/Documents/Scripts/Python/tkinter/unicorn.jpg")
-img2 = ImageTk.PhotoImage(file="C:/Users/Uekyq/Documents/Scripts/Python/tkinter/unicorn2.jpg")
-canvas.create_image(20,20, anchor=NW, image=img)
+image1 = Image.open("dune.jpg")
 def swapImg():
-    canvas.create_image(20,20, anchor=NW, image=img2)
+    print(image1.size)
     return 1
+# This line resizes the image to one fourth its original size, but I think it'd be better to make a functio that detects if the image is larger than the current window size and tries to resize the image by one integer factor lower until it completely fits within the window. Look up how to do this at work tomorrow.
+image1 = image1.resize((int(image1.size[0] / 4),int(image1.size[1] / 4)),Image.ANTIALIAS)
+test = ImageTk.PhotoImage(image1)
+
+label1 = Label(image=test)
+label1.image = test
+
+myLabel = Label(root, text="Hello, World!")
 b = Button ( master=root, command=swapImg, text="ee")
+myLabel.pack()
 b.pack()
+label1.pack()
 
 root.mainloop()
