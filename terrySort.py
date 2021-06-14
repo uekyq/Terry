@@ -3,6 +3,7 @@ from PIL import ImageTk, Image
 
 root = Tk()
 
+# ee
 # Creating a Label Widget
 myLabel = Label(root, text="Hello, World!")
 myLabel.pack()
