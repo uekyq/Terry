@@ -1,0 +1,5 @@
+startFunction - gets specified folder and starts the windowLoop function
+fileArrayBuilder - returns an array of all the files in the specified folder
+folderArrayBuilder - returns an array of all the folders in the specified folder
+windowLooper - starts the window and runs the loop through the fileArray
+moveFile - moves the specified file into the specified folder
